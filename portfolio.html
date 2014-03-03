@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>Kevin Folk /// Portfolio</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+<!--
+/*
+ * MyFonts Webfont Build ID 726359, 2011-03-19T20:56:17-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Museo 300
+ * URL: http://new.myfonts.com/fonts/exljbris/museo/300/
+ * Foundry: exljbris
+ * Copyright: Copyright (c) 2008 by Jos Buivenga/exljbris. All rights reserved.
+ * License: http://www.myfonts.com/viewlicense?1056
+ * Licensed pageviews: unlimited/month
+ * CSS font-family: Museo-300
+ * CSS font-weight: normal
+ * 
+ * Webfont: Museo 500
+ * URL: http://new.myfonts.com/fonts/exljbris/museo/500/
+ * Foundry: exljbris
+ * Copyright: Copyright (c) 2008 by Jos Buivenga/exljbris. All rights reserved.
+ * License: http://www.myfonts.com/viewlicense?1056
+ * Licensed pageviews: unlimited/month
+ * CSS font-family: Museo-500
+ * CSS font-weight: normal
+ * 
+ * Webfont: Museo Sans 500
+ * URL: http://new.myfonts.com/fonts/exljbris/museo-sans/500/
+ * Foundry: exljbris
+ * Copyright: Copyright (c) 2008 by Jos Buivenga. All rights reserved.
+ * License: http://www.myfonts.com/viewlicense?1056
+ * Licensed pageviews: unlimited/month
+ * CSS font-family: MuseoSans-500
+ * CSS font-weight: normal
+ * 
+ * Webfont: Museo Slab 500
+ * URL: http://new.myfonts.com/fonts/exljbris/museo-slab/500/
+ * Foundry: exljbris
+ * Copyright: Copyright (c) 2009 by Jos Buivenga. All rights reserved.
+ * License: http://www.myfonts.com/viewlicense?1056
+ * Licensed pageviews: unlimited/month
+ * CSS font-family: MuseoSlab-500
+ * CSS font-weight: normal
+ * 
+ * (c) 2011 Bitstream, Inc
+*/-->
+<script type="text/javascript">
+//change this to true to enable troubleshooting mode
+var myfont_webfont_test = false;
+// change this to false if you're having trouble with WOFFs
+var woffEnabled = true;
+// to place your webfonts in a custom directory, uncomment this and set it to where your webfonts are.
+var customPath = "/fonts";
+</script>
+<script type="text/javascript" src="./fonts/Webfonts.js"></script>
+
+<script>
+!window.jQuery && document.write('<script src="/fancy/jquery-1.4.3.min.js"><\/script>');
+</script>
+
+<script type="text/javascript" src="./fancy/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+
+<script type="text/javascript" src="./fancy/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./fancy/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+
+<style type="text/css">
+
+#fancybox-overlay {
+  position: fixed !important;
+}
+	
+#fancybox-left-ico { 
+ left: 20px;} 
+
+#fancybox-right-ico { 
+ right: 20px; 
+ left: auto;}
+ 
+#fancybox-title h4{
+	color: #00aaef;
+	margin-top:0.3em;
+	margin-bottom:0.3em;}
+</style> 
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	
+	$("a.single_image").fancybox({
+	'transitionIn'	: 'elastic',
+	'transitionOut'	: 'elastic',
+	'titlePosition'		: 'outside',
+	'overlayColor'		: '#000',
+	'overlayOpacity'	: 0.9
+	});
+	
+	$("a.group").fancybox({
+	'cyclic'			: 'true',
+	'transitionIn'		: 'elastic',
+	'transitionOut'		: 'elastic',
+	'titlePosition' 	: 'outside',
+	'overlayColor'		: '#000',
+	'overlayOpacity'	: 0.9,
+	'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+			return '<span id="fancybox-title-outside">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + ( title.length ? ' <br> ' + title : '') + '</span>';}
+	});
+	
+	$("a.iframe").fancybox({
+	'cyclic'			: 'true',
+	'transitionIn'		: 'elastic',
+	'transitionOut'		: 'elastic',
+	'titlePosition' 	: 'outsid   e',
+	'overlayColor'		: '#000',
+	'overlayOpacity'	: 0.9,   	'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+			return '<span id="fancybox-title-outside">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + ( title.length ? ' <br> ' + title : '') + '</span>';},
+	'width'				:'85%',
+	'height'			:'85%', 
+	'type'				:'iframe',
+	'showNavArrows'		: false 
+	});
+	
+	
+	$("a#videolink1").click(function() {
+		$.fancybox({
+			'padding'		: 0,
+			'autoScale'		: false,
+			'transitionIn'	: 'elastic',
+			'transitionOut'	: 'elastic',
+			'titlePosition' : 'outside',
+			'overlayColor'	: '#000',
+			'overlayOpacity': 0.9,
+			'title'			: this.title,
+			'width'			: 600,
+			'height'		: 338,
+			'href'			: this.href.replace(new RegExp("([0-9])","i"),'moogaloop.swf?clip_id=$1'),
+			'type'			: 'swf'
+		});
+		return false;
+		});
+		
+	$("a#videolink2").click(function() {
+		$.fancybox({
+			'padding'		: 0,
+			'autoScale'		: false,
+			'transitionIn'	: 'elastic',
+			'transitionOut'	: 'elastic',
+			'titlePosition' : 'outside',
+			'overlayColor'	: '#000',
+			'overlayOpacity': 0.9,
+			'title'			: this.title,
+			'width'			: 600,
+			'height'		: 398,
+			'href'			: this.href.replace(new RegExp("([0-9])","i"),'moogaloop.swf?clip_id=$1'),
+			'type'			: 'swf'
+		});
+		return false;
+		});
+			
+	var selection = document.URL.split("#");
+	if(selection[1])
+	{
+		if(selection[1] === "logo_&_identity")
+		{
+			setCurrent("thumb1");
+		}
+		else if(selection[1] === "print_&_publication")
+		{
+			setCurrent("thumb2");
+		}
+		else if(selection[1] === "web_&_motion")
+		{
+			setCurrent("thumb3");
+		}
+	}
+});
+
+	function setCurrent(buttonContent)
+	{
+		$("#thumbnails li img").removeClass('thumbSelected');
+		$("#thumbnails li." + buttonContent + " img").addClass('thumbSelected');
+		$("#navigation li").removeClass('current');
+		$("#navigation li." + buttonContent).addClass('current');
+	}
+
+</script>
+
+<style type="text/css">
+
+body {background-image:url('geotile-01.png'); 
+font-family: "Museo-300", "Helvetica", "Arial";}
+
+#navigation {
+	margin:40px;
+	position:absolute;}
+	
+#navigation ul {
+	list-style-type:none; 
+	margin:40px 0 0 0;
+	padding:0;
+	width:195px;}	
+	
+#navigation li a {
+	color:#fff; 
+	background-color:#333;
+	display: block;
+	font-family:"MuseoSlab-500";
+	height:20px;
+	margin-bottom: 15px;
+	padding:6px 0 4px 10px;
+	font-size:11pt;
+	letter-spacing:1px;
+	text-decoration:none;
+	text-transform:lowercase;
+	width:185px;}
+	
+#navigation li a:hover {
+	background:#000;}
+	
+#navigation li.current a{
+	background:#00aaef;}
+	
+#navigation li.last-item a{	
+	margin-top:250px;}
+	
+.logo {
+	border: none;}
+	
+/*END NAV*/
+
+.portfolio {
+	position:absolute;
+	background:#333;
+	left:255px;
+	margin:40px;
+	position:absolute;
+	width:695px;
+	height:685px;
+	overflow:hidden;}
+ 
+ul#thumbnails {
+	margin:52px 0 0 40px;
+	padding:0 0 0 0;}
+	
+#thumbnails li {
+	display:inline;}	
+ 
+.thumb1 img, .thumb2 img, .thumb3 img {
+	margin:0 11px 11px 0;}
+	
+.thumb1 a img, .thumb2 a img, .thumb3 a img {
+	border: 5px solid #333;}
+	
+.thumbSelected {
+	border: 5px solid #00AAEF !important;
+}
+	
+/*END THUMBNAILS*/
+	
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22237388-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+<div id="navigation">
+<a href="Home.html"><img class="logo" src="KTF_Logo_Final-01.png" width="195" height="195"></a>
+
+<ul>
+<li><a href="about.html">about me</a></li>
+<li class="thumb1" onclick="setCurrent('thumb1');"><a href="#logo_&_identity">logo & identity</a></li>
+<li class="thumb2"><a href="#print_&_publication" onclick="setCurrent('thumb2');">print & publication</a></li>
+<li class="thumb3"><a href="#web_&_motion" onclick="setCurrent('thumb3');">web & motion</a></li>
+<li class="last-item"><a href="mailto:kevinfolk@gmail.com">contact me</a></li>
+</ul>
+<!-- navigation --></div>
+
+<div class="portfolio">  
+<ul id="thumbnails">
+
+<li class="thumb1"><a class="single_image" href="images/portfolio_images/Marx.jpg" 
+title="<h4>Karl Marx Wordmark</h4>
+This mark was my solution to a project for STA 365, Typography 1: Form and Meaning. The problem was to create a wordmark which represented the assigned word. This was addressed in the Marx mark by means of abstracting commonly identifiable communist symbols, and working them into custom lettering which features a harsh and repetitive diagonal movement.">
+<img src="images/thumbs/Marx.jpg" width="100" height="100" title="Karl Marx Wordmark"/></a></li> 
+
+<li class="thumb1"><a class="single_image" href="images/portfolio_images/Ares.jpg" 
+title="<h4>Ares Letterform</h4>
+This piece was created for STA 460: Graphic Design II: Visual Communication. The assigned project was to select a mythological god, and then create a visual representation by altering the first letter of the god’s name in such a way as to create a one-color letterform. In this work, Ares, the god of war, was selected. His traditional spear and bronze-shield are integrated into the form of the A.">
+<img src="images/thumbs/Ares.jpg" width="100" height="100" title="Ares Letterform"/></a></li>
+
+<li class="thumb1"><a class="single_image" href="images/portfolio_images/CRI.jpg"
+title="<h4>CRI Logo</h4>
+This logo form was completed for STA 494: Design Center. The Client was Crystallographic Resources, Inc, a company who identifies and structurally analyzes organic and non-organic crystals for pharmaceutical companies and research groups. This one-color mark was created to form a synthesis between the ideas of “crystal” and “molecule” and imbue a sense of structure and order. This mark was of my original design and was perfected with the help of a group of students who I directed. This work was featured in the 2010 BFA Graphic Design Exhibition and Student Show at Michigan State University."><img src="images/thumbs/CRI.jpg" width="100" height="100" title="CRI Logo"/></a></li>
+
+<li class="thumb1"><a class="single_image" href="images/portfolio_images/Icer.jpg" 
+title="<h4>Icer Logo</h4>
+This logo form was completed for STA 494: Design Center. The mark was designed for the Institute for Cyber Enabled Research. ICER is a technology group which distributes computing time to help with research projects. This mark was of my original design and was perfected with the help of a group of students who I directed. The logo communicates the idea of interconnectivity through the repetition of the “node” form as well as through the implied shape left by the four nodes. "><img src="images/thumbs/Icer.jpg" width="100" height="100" title="Icer Logo"/></a></li>
+
+<li class="thumb1"><a class="group" rel="zoroaster" href="images/portfolio_images/Zoroaster_All.jpg" 
+title="<h4>Zoroaster Wines Branding</h4>
+This branding campaign was created for STA 466: Corporate Imagery. The assignment required that a corporation be proposed, complete with mission statement, target audience profiles, communication goals, and touchpoints. The company I branded is Zoroaster Wines, a collaborative North American wine producer with a focus on environmental sustainability and extending wine appreciation to uninitiated audiences. The logo is an abstraction of grape clusters and dynamically changes, changing leaf-shape to reference the particular grape variety of the current application. This campaign recieved a silver Addy award by the mid-Michigan American Advertising Federation.">
+<img src="images/thumbs/Zoroaster.jpg" width="100" height="100" title="Zoroaster Wines Branding"/></a></li>
+
+<a class="group" rel="zoroaster" href="images/portfolio_images/Zoroaster_Bottles1.jpg" 
+title="<h4>Zoroaster Wines Bottles</h4>
+Each bottle has had the logo hand-etched into its glass. There is also a minimal and contemporary approach taken to type and information design. The rear label educates consumers with information pertaining to sustainability and geographical characteristics of the particular variety.">
+</a>
+
+<a class="group" rel="zoroaster" href="images/portfolio_images/Zoroaster_Bottles2.jpg" 
+title="<h4>Zoroaster Wines Bottles</h4>
+Red and white wines have unique color applications suited to the resulting bottle color. The QR code on the rear label would load a mobile web page specific to the wine on which it resides.">
+</a>
+
+<a class="group" rel="zoroaster" href="images/portfolio_images/Zoroaster_Flyer.jpg" 
+title="<h4>Zoroaster Wines In-Store Flyer</h4>
+Flyers such as this would be placed at the point of purchase to increase buyer awareness of the brand, establish a relationship, and further educate the consumer in their ability to understand and purchase wines. ">
+</a>
+
+<a class="iframe" rel="zoroaster" href="http://issuu.com/kevinfolk/docs/zoroaster_stylebook?mode=embed&viewMode=presentation&layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Fdarkicons%2Flayout.xml&showFlipBtn=true"
+title=""></a>
+
+<!-- End Logo & Identity-->
+
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/Ambulance.jpg" 
+title="<h4>Ambulances for the Ample Magazine Spread</h4>
+This piece was created for STA 460: Graphic Design II: Visual Communication.  I chose a minimal approach in my use of image and text, opting to create a graphic symbol to visually represent the message of the article, which focused on the ethical question of charging obese people more for ambulances and medical treatments. I reduced the article to a minimal amount of necessary text, and allowed the graphic symbol and body text to interact with a large field of charged white space. This work was featured in the 2010 Student Show at Michigan State University.">
+<img src="images/thumbs/Ambulance.jpg" width="100" height="100" title="Ambulances for the Ample Magazine"/></a></li>
+
+<li class="thumb2"><a class="group" rel="earth" href="images/portfolio_images/Earth1.jpg" 
+title="<h4>Earth Magazine Cover</h4>
+This cover spread is a part of a project for STA 365: Typography 1: Form and Meaning. The project required the redesign of a selected magazine, from which I gathered the article content and tone. All photographic content for the magazine was shot by me in the local area. The magazine spreads adhered to a unified system of text treatment, color, and grid. 
+<br>I opted for a narrow color scheme, using primarily black, white, and cyan, for a clean and modern feel.">
+<img src="images/thumbs/Earth.jpg" width="100" height="100" title="Earth Magazine"/></a></li>
+
+<a class="group" rel="earth" href="images/portfolio_images/Earth2.jpg" 
+title="<h4>Earth Table of Contents</h4>
+This Table of Contents spread was used as an opportunity to adhere less strictly to the established grid, and instead have more inventive and playful typography. In this spread, the color and text systems can be seen carried through from the cover spread.">
+</a>
+
+<a class="group" rel="earth" href="images/portfolio_images/Earth3.jpg" 
+title="<h4>Earth Spread</h4>
+This content spread was designed to showcase an article about expanding and improving the national power grid to be more efficient and safer. The assignment called for a synthesis of image and text. I chose and photographed the subject to represent the degradation of our nations current power grid.">
+</a>
+
+<li class="thumb2"><a class="group" rel="catch" href="images/portfolio_images/Catch_22_Detail.jpg" 
+title="<h4>Catch 22 Cover Detail</h4>
+The dust jacket seen here was created for STA 463: Book Design. The project was to find a used book and create for it a dust jacket which addressed the original information content of the covers and represented the story both visually and through tone. I chose Heller’s classic Catch-22.">
+<img src="images/thumbs/Catch_22.jpg" width="100" height="100" title="Catch 22 Cover"/></a></li>
+
+<a class="group" rel="catch" href="images/portfolio_images/Catch_22.jpg" 
+title="<h4>Catch 22 Cover</h4>
+The repetition of bomber silhouettes in formation is used to reinforce the ideas of bureaucracy and uniformity addressed in the text. The lone bright-red plane represents Yossarian, constantly at odds with the war. The dust jacket was printed on heavyweight yellowed drawing paper, giving it a worn look and texture.">
+</a>
+
+<a class="group" rel="catch" href="images/portfolio_images/Catch_22_Full.jpg" 
+title="<h4>Catch 22 Full Dust Jacket</h4>
+The interior flaps feature a short biography of Heller and oblique allusions to parts of the story.">
+</a>
+
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/UURAF.jpg" 
+title="<h4>UURAF Flyer</h4>
+This work is a promotional piece created for Michigan State University’s Undergraduate Office, for their yearly University Undergraduate Research and Arts Forum. The UURAF is a university-wide interdisciplinary event which provides students engaged in research an opportunity to share their findings. This piece was used promotionally, in newspaper advertisements, and invitations, as well as on the cover of the event book.  I chose a fractal form in order to address the ideas of growth and the metaphor of knowledge as a tree.">
+<img src="images/thumbs/UURAF.jpg" width="100" height="100" title="UURAF Flyer"/></a></li>
+ 
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/Self_Portrait.jpg" 
+title="<h4>Graphic Self Portrait</h4>
+This piece was my final project for STA 360: Graphic Deisgn 1: Graphic Form. The assignment was to create a poster which addressed graphic design and ourselves. I chose to do a self-portrait. I set several different weights and point sizes of Univers to created an approximate self portrait. The text was taken from an essay by Paul Rand on the subject of commercial design. The contradiction addressed in the essay is reinforced by the assertion “I don’t want to sell you anything”.">
+<img src="images/thumbs/Self_Portrait.jpg" width="100" height="100" title="Graphic Self Portrait"/></a></li>
+
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/Pinocchio.jpg" 
+title="<h4>Pinocchio Book Cover</h4>
+This piece was created for STA 460: Graphic Design II: Visual Communication. The project was to create a front cover which represents a traditional children's story using allusion or visual metaphor. I chose Carlo Collodi’s original version of Pinocchio, in which the character is eventually hung to death by bandits after not heeding the advice of his elders. This much darker tone is echoed by the stark symbol of the noose hanging from what one assumes to be Pinocchio’s nose.">
+<img src="images/thumbs/Pinocchio.jpg" width="100" height="100" title="Pinocchio Book Cover"/></a></li>
+
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/Hamlet.jpg" 
+title="<h4>Hamlet Play Poster</h4>
+This-poster (22 x 28 inches) was created for STA 460: Graphic Design II: Visual Communication. The assignment was to create a promotional piece for a performance of a Shakespearean play. I chose to work with Shakespeare’s classic work, Hamlet. Here, the playing card is used to address the issue of duality and existentialism, as the figures of death and the king weave together as one. This piece was featured in the American Advertising Federation’s 2010 Mid-Michigan Student Addy Awards, and won a Silver Addy in the category of collateral material.">
+<img src="images/thumbs/Hamlet.jpg" width="100" height="100" title="Hamlet Play Poster"/></a></li>
+
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/Botany.jpg" 
+title="<h4>Arts and Crafts Poster</h4>
+This poster was created for MSU's UAB annual Arts & Crafts Show. In designing this poster I began with the ideas of the natural elements of spring and handmade items. This lead to imagery from the old 18th and 19th century style of illustrating botanical texts. The custom aged-parchment background texture, limited organic color palette and gothic type choices add to the visual experience that the poster is a page ripped from an antique botanical text."><img src="images/thumbs/Botany.jpg" width="100" height="100" title="Arts and Crafts Poster"/></a></li>
+  
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/Spirits.jpg" 
+title="<h4>Spirits T-Shirt Design</h4>
+This T-shirt design and mockup is based on a visual pun of the term “spirits”. 
+<br>Each bottle is releasing a spirit which represents the location or genesis of the particular beverage."><img src="images/thumbs/Spirits.jpg" width="100" height="100" title="Spirits T-Shirt Design"/></a></li>
+
+<li class="thumb2"><a class="single_image" href="images/portfolio_images/Picasso.jpg" 
+title="<h4>Picasso's Blues T-Shirt Design</h4>
+This T-shirt design and mockup is based heavily on Picasso’s painting “The Old Guitarist”. The piece creates a visual pun by replacing Picasso’s iconic blue-period imagery with a Blues musician complete with a 1959 Gibson 335 and a pork-pie hat. ">
+<img src="images/thumbs/Picasso.jpg" width="100" height="100" title="Picasso's Blues T-Shirt Design"/></a></li>
+
+<li class="thumb2"><a class="group" rel="MFA" href="images/portfolio_images/MFA_Postcard1.jpg" 
+title="<h4>MFA Postcard Front</h4>
+This postcard was created for Michigan State University’s Department of Art & Art History as a companion mailer to the Master of Fine Arts show and catalog. It was also modified for use as a promotional poster.">
+<img src="images/thumbs/MFA_catalog.jpg" width="100" height="100" title="Picasso's Blues T-Shirt Design"/></a></li>
+
+<a class="group" rel="MFA" href="images/portfolio_images/MFA_Postcard2.jpg" 
+title="<h4>MFA Postcard Back</h4>
+The simple and clean typography and abstract-geometric approach to imagery were chosen to be neutral with the artwork, not highlighting any one discipline over another. ">
+</a>
+
+<a class="iframe" rel="MFA" href="http://issuu.com/kevinfolk/docs/mfa_catalog?mode=embed&viewMode=presentation&layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Fdark%2Flayout.xml&showFlipBtn=true"
+title=""></a>
+
+<!-- End Print & Publication-->
+
+<li class="thumb3"><a id="videolink1" href="http://vimeo.com/21053264"
+title="I worked with a group of design students for the Michigan State University chapter of Beyond Coal to create this video. Beyond Coal is a group that is dedicated to increasing awareness and support for alternative energy sources over coal-fire power plants. This piece was specifically aimed at professionals at MSU.">
+<img src="images/thumbs/Coal.jpg" width="100" height="100" title="Beyond Coal Video"/></a></li> 
+
+<li class="thumb3"><a class="single_image" href="images/portfolio_images/Zoroaster_Device_App.swf" 
+title="<h4>Zoroaster Wines Device App</h4>
+This digital mockup shows how a consumer would interact with the QR code located on every Zoroaster bottle, bringing up and navigating an informational mobile webpage specific to that wine."><img src="images/thumbs/Zoroaster_App.jpg" width="100" height="100" title="Zoroaster Wines Device App"/></a></li> 
+
+<li class="thumb3"><a id="videolink2" href="http://vimeo.com/9478744"
+title="Phenome is the story of the life of a small circle. It was completed entirely through Hand Animation. All of the frames were drawn by hand with pencil on paper and then layered with an acrylic-stained acetate transparency to provide the background coloration. The short minute-and-a-half piece totals near 1000 frames, and took many hours to complete. The audio is an original recording, taken from an improvised session between Kevin Folk (on bottles), Ryan Goh (on Piano), and Korey Carter (on percussion)."><img src="images/thumbs/Stop_Motion.jpg" width="100" height="100" title="Phenome Animation"/></a></li> 
+
+<!-- End Web & Motion--></ul> 
+<!-- Thumbnail Gallery --></div>
+
+
+</body>
+
+</html>
